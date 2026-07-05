@@ -1,0 +1,100 @@
+ body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background: #f8f5f2;
+        }
+        .main {
+            margin-left: 260px;
+            padding: 40px;
+        }
+        .hero {
+            background: linear-gradient(rgba(74,28,28,0.75), rgba(74,28,28,0.85)), src('') center/cover;
+            color: white;
+            padding: 180px 60px 140px;
+            border-radius: 12px;
+            margin-bottom: 80px;
+            min-height: 70vh;
+        }
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+        }
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+        .story-image {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .chef {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 30px;
+        }
+        .chef img {
+            width: 220px;
+            height: 220px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+        .philosophy {
+            margin-bottom: 80px;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .card h3 {
+            color: #4a1c1c;
+            margin-bottom: 15px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #4a1c1c;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            margin: 60px 0;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat i {
+            font-size: 2.5rem;
+            color: #4a1c1c;
+            margin-bottom: 10px;
+        }
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #4a1c1c;
+        }

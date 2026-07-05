@@ -1,0 +1,68 @@
+<svg width="680" height="220" viewBox="0 0 680 220" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>AURELLE Fine Dining — Wordmark</title>
+  <desc>AURELLE wordmark with Fine Dining tagline, gold tones, transparent background.</desc>
+
+  <defs>
+    <linearGradient id="goldSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F1F0CC;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#D5BF86;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#8D775F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D5BF86;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dividerGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   style="stop-color:#3F0D12;stop-opacity:0" />
+      <stop offset="20%"  style="stop-color:#8D775F;stop-opacity:1" />
+      <stop offset="50%"  style="stop-color:#D5BF86;stop-opacity:1" />
+      <stop offset="80%"  style="stop-color:#8D775F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3F0D12;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Top rule -->
+  <line x1="140" y1="18" x2="540" y2="18" stroke="url(#dividerGold)" stroke-width="0.7"/>
+  <polygon points="340,14 344,18 340,22 336,18" fill="#D5BF86"/>
+  <circle cx="320" cy="18" r="1.5" fill="#8D775F" opacity="0.7"/>
+  <circle cx="360" cy="18" r="1.5" fill="#8D775F" opacity="0.7"/>
+
+  <!-- AURELLE wordmark -->
+  <text
+    x="340" y="90"
+    text-anchor="middle"
+    font-family="'Didot', 'Bodoni MT', 'Playfair Display', 'Times New Roman', serif"
+    font-size="62"
+    font-weight="400"
+    letter-spacing="18"
+    fill="url(#goldSheen)"
+  >AURELLE</text>
+
+  <!-- Rule under wordmark -->
+  <line x1="190" y1="108" x2="490" y2="108" stroke="url(#dividerGold)" stroke-width="0.6"/>
+
+  <!-- Flanking dashes for tagline -->
+  <line x1="224" y1="138" x2="260" y2="138" stroke="#8D775F" stroke-width="0.6" opacity="0.7"/>
+  <line x1="420" y1="138" x2="456" y2="138" stroke="#8D775F" stroke-width="0.6" opacity="0.7"/>
+
+  <!-- Fine Dining tagline -->
+  <text
+    x="340" y="143"
+    text-anchor="middle"
+    font-family="'Cormorant Garamond', 'Garamond', 'Palatino Linotype', 'Times New Roman', serif"
+    font-size="17"
+    font-weight="400"
+    font-style="italic"
+    letter-spacing="7"
+    fill="#D5BF86"
+    opacity="0.88"
+  >Fine Dining</text>
+
+  <!-- Bottom rule -->
+  <line x1="200" y1="176" x2="480" y2="176" stroke="url(#dividerGold)" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- Bottom dot ornament -->
+  <circle cx="300" cy="196" r="1.5" fill="#8D775F" opacity="0.5"/>
+  <circle cx="320" cy="196" r="2"   fill="#D5BF86" opacity="0.6"/>
+  <circle cx="340" cy="196" r="3"   fill="#8D775F" opacity="0.55"/>
+  <circle cx="360" cy="196" r="2"   fill="#D5BF86" opacity="0.6"/>
+  <circle cx="380" cy="196" r="1.5" fill="#8D775F" opacity="0.5"/>
+
+</svg>

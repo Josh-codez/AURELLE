@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/order.css">
+        <link rel="stylesheet" href="css/nav.css">
+        <link rel="stylesheet" href="css/footer.css">
+    </head>
+    <body>
+        
+        <div class="cont">
+            <nav class="nav_bar" aria-label="Main navigation">
+                <div class="image_cont">
+                    <svg width="100" height="100" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="200" cy="200" r="152" fill="none" stroke="#D5BF86" stroke-width="1.2"/>
+                        <circle cx="200" cy="200" r="138" fill="none" stroke="#D5BF86" stroke-width="2"/>
+                        <circle cx="200" cy="200" r="130" fill="none" stroke="#8D775F" stroke-width="0.6" opacity="0.6"/>
+                        <polygon points="200,57 204.5,64 200,71 195.5,64" fill="#D5BF86"/>
+                        <polygon points="200,329 204.5,336 200,343 195.5,336" fill="#D5BF86"/>
+                        <polygon points="57,200 64,204.5 71,200 64,195.5" fill="#D5BF86"/>
+                        <polygon points="329,200 336,204.5 343,200 336,195.5" fill="#D5BF86"/>
+                        <g transform="translate(200, 108)">
+                            <rect x="-22" y="14" width="44" height="5" rx="1" fill="#D5BF86" opacity="0.9"/>
+                            <polygon points="-22,14 -22,-2 -11,8 0,-4 11,8 22,-2 22,14" fill="#D5BF86" opacity="0.85"/>
+                            <circle cx="0" cy="-4" r="2.2" fill="#A71D31" stroke="#D5BF86" stroke-width="0.8"/>
+                            <circle cx="-11" cy="8" r="1.5" fill="#D5BF86"/>
+                            <circle cx="11"  cy="8" r="1.5" fill="#D5BF86"/>
+                            <circle cx="-22" cy="-2" r="1.5" fill="#D5BF86"/>
+                            <circle cx="22"  cy="-2" r="1.5" fill="#D5BF86"/>
+                        </g>
+                        <path d="M200 138 L253 275 L245 275 L230 238 L170 238 L156 275 L147 275 Z M176 228 L200 165 L224 228 Z" fill="#D5BF86" opacity="0.92"/>
+                        <rect x="134" y="275" width="26" height="2.5" rx="1" fill="#D5BF86" opacity="0.9"/>
+                        <rect x="240" y="275" width="26" height="2.5" rx="1" fill="#D5BF86" opacity="0.9"/>
+                        <rect x="158" y="229" width="84" height="2" rx="1" fill="#D5BF86" opacity="0.85"/>
+                        <polygon points="200,293 203.5,298 200,303 196.5,298" fill="#A71D31" stroke="#D5BF86" stroke-width="0.8"/>
+                        <text x="200" y="382" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="28" letter-spacing="10" fill="#D5BF86" font-weight="400">AURELLE</text>
+                        <text x="200" y="400" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" letter-spacing="5" fill="#8D775F" font-weight="400" font-style="italic">Fine Dining</text>
+                    </svg>
+                </div>
+
+                <ul class="navli_cont">
+                    <div class="nav_divider"></div>
+                    <li>
+                        <a href="index.html">
+                            <img src="assets/svg/home.svg" alt="Home" class="nav_icon">
+                            Home
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="order.html">
+                            <img src="assets/svg/cart.svg" alt="Order" class="nav_icon">
+                            Order
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reservations.html">
+                            <img src="assets/svg/reservation.svg" alt="Reservations" class="nav_icon">
+                            Reservations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#location">
+                            <img src="assets/svg/location.svg" alt="Location" class="nav_icon">
+                            Location
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about">
+                            <img src="assets/svg/about.svg" alt="About us" class="nav_icon">
+                            About us
+                        </a>
+                    </li>
+                    <div class="nav_divider"></div>
+                    <li>
+                        <a href="#contact">
+                            <img src="assets/svg/contact.svg" alt="Contact" class="nav_icon">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="res_info">
+                    
+                </div>
+            </nav>
+
+            <main class="main_cont">
+                <section class="sec_nav">
+                    <div class="txt_cont">
+                        <p>Good Evening</p>
+                        <h3>Explore Our Menu</h3>
+                    </div>
+                    <div class="search_cart_cont">
+                        <div class="search_wrapper">
+                            <svg class="search_icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                            <input type="search" class="search_box" id="search" placeholder="Search menu...">
+                        </div>
+
+                        <div class="cart_popup_wrap">
+                            <button class="btn" id="cart_btn">
+                                <img class="cart_img" src="assets/svg/cart.svg" alt="Cart icon">
+                                <span id="cart_count" class="cart_count_badge">0</span>
+                            </button>
+                            <div class="cart_popup" id="cart_popup">
+                                <div class="cart_popup_header">
+                                    <p class="cart_popup_title">Your Order</p>
+                                </div>
+                                <ul class="cart_items_list" id="cart_items_list">
+                                    <li class="cart_empty">Your cart is empty</li>
+                                </ul>
+                                <div class="cart_popup_footer">
+                                    <div class="cart_total_row">
+                                        <span class="cart_total_label">Total</span>
+                                        <span class="cart_total_value" id="cart_total">₦0.00</span>
+                                    </div>
+                                    <button class="btn cart_checkout_btn">Checkout</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="menu">
+                    <div class="filter_bar">
+                        <div class="filt_txt">
+                            <p id="no_dish">0</p>
+                        </div>
+                        <button class="filt_btn" id="all_btn">All</button>
+                        <button class="filt_btn" id="appetizers_btn">Appetizers</button>
+                        <button class="filt_btn" id="mains_btn">Main Courses</button>
+                        <button class="filt_btn" id="desserts_btn">Desserts</button>
+                        <button class="filt_btn" id="drinks_btn">Drinks</button>
+                    </div>
+                    <div class="menu_cont" id="menu_cont">
+                        <div class="orderSlider">
+                            <div class="food_card-slider">
+                                <div class="card_img">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="card_info">
+                                    <div class="rating_bar" id="stars">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <div class="card_txt" id="dish_name">
+                                        <p>filler</p>
+                                    </div>
+                                    <div class="pur_cont">
+                                        <div class="price" id="dish_price">
+                                            <p>₦0.00</p>
+                                        </div>
+                                        <button class="btn add_cart_btn">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="food_card">
+                            <div class="card_img">
+                                <img src="" alt="">
+                            </div>
+
+                            <div class="card_info">
+                                <div class="rating_bar" id="stars">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                                <div class="card_txt" id="dish_name">
+                                    <p>filler</p>
+                                </div>
+                                <div class="pur_cont">
+                                    <div class="price" id="dish_price">
+                                        <p>₦0.00</p>
+                                    </div>
+                                    <button class="btn add_cart_btn">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <footer class="site_footer">
+                    <div class="footer_inner">
+
+                        <div class="footer_brand">
+                            <svg width="72" height="72" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="200" cy="200" r="152" fill="none" stroke="#D5BF86" stroke-width="1.2"/>
+                                <circle cx="200" cy="200" r="138" fill="none" stroke="#D5BF86" stroke-width="2"/>
+                                <circle cx="200" cy="200" r="130" fill="none" stroke="#8D775F" stroke-width="0.6" opacity="0.6"/>
+                                <polygon points="200,57 204.5,64 200,71 195.5,64" fill="#D5BF86"/>
+                                <polygon points="200,329 204.5,336 200,343 195.5,336" fill="#D5BF86"/>
+                                <polygon points="57,200 64,204.5 71,200 64,195.5" fill="#D5BF86"/>
+                                <polygon points="329,200 336,204.5 343,200 336,195.5" fill="#D5BF86"/>
+                                <g transform="translate(200, 108)">
+                                    <rect x="-22" y="14" width="44" height="5" rx="1" fill="#D5BF86" opacity="0.9"/>
+                                    <polygon points="-22,14 -22,-2 -11,8 0,-4 11,8 22,-2 22,14" fill="#D5BF86" opacity="0.85"/>
+                                    <circle cx="0" cy="-4" r="2.2" fill="#A71D31" stroke="#D5BF86" stroke-width="0.8"/>
+                                    <circle cx="-11" cy="8" r="1.5" fill="#D5BF86"/>
+                                    <circle cx="11"  cy="8" r="1.5" fill="#D5BF86"/>
+                                    <circle cx="-22" cy="-2" r="1.5" fill="#D5BF86"/>
+                                    <circle cx="22"  cy="-2" r="1.5" fill="#D5BF86"/>
+                                </g>
+                                <path d="M200 138 L253 275 L245 275 L230 238 L170 238 L156 275 L147 275 Z M176 228 L200 165 L224 228 Z" fill="#D5BF86" opacity="0.92"/>
+                                <rect x="134" y="275" width="26" height="2.5" rx="1" fill="#D5BF86" opacity="0.9"/>
+                                <rect x="240" y="275" width="26" height="2.5" rx="1" fill="#D5BF86" opacity="0.9"/>
+                                <rect x="158" y="229" width="84" height="2" rx="1" fill="#D5BF86" opacity="0.85"/>
+                                <polygon points="200,293 203.5,298 200,303 196.5,298" fill="#A71D31" stroke="#D5BF86" stroke-width="0.8"/>
+                            </svg>
+                            <p class="footer_wordmark">AURELLE</p>
+                            <p class="footer_tagline">Fine Dining</p>
+                            <p class="footer_desc">An extraordinary dining experience crafted from the finest ingredients and presented with artistry.</p>
+                            <div class="footer_socials">
+                                <a href="#" class="footer_social_link" aria-label="Instagram">
+                                    <img src="assets/svg/instagram.svg" alt="" class="footer_social_icon">
+                                </a>
+                                <a href="#" class="footer_social_link" aria-label="Phone">
+                                    <img src="assets/svg/phone.svg" alt="" class="footer_social_icon">
+                                </a>
+                                <a href="#" class="footer_social_link" aria-label="Email">
+                                    <img src="assets/svg/share.svg" alt="" class="footer_social_icon">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="footer_col">
+                            <p class="footer_col_title">Navigate</p>
+                            <ul class="footer_links">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="order.html">Order</a></li>
+                                <li><a href="reservations.html">Reservations</a></li>
+                                <li><a href="#gallery">Gallery</a></li>
+                                <li><a href="#about">About us</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer_col">
+                            <p class="footer_col_title">Hours</p>
+                            <ul class="footer_hours">
+                                <li>
+                                    <span class="footer_day">Mon – Thu</span>
+                                    <span class="footer_time">6:00 pm – 10:00 pm</span>
+                                </li>
+                                <li>
+                                    <span class="footer_day">Fri – Sat</span>
+                                    <span class="footer_time">6:00 pm – 11:30 pm</span>
+                                </li>
+                                <li>
+                                    <span class="footer_day">Sunday</span>
+                                    <span class="footer_time">Closed</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="footer_col">
+                            <p class="footer_col_title">Contact</p>
+                            <ul class="footer_contact">
+                                <li>
+                                    <img src="assets/svg/location.svg" alt="" class="footer_contact_icon">
+                                    <span>14 Refined Quarter,<br>Lagos, Nigeria</span>
+                                </li>
+                                <li>
+                                    <img src="assets/svg/phone.svg" alt="" class="footer_contact_icon">
+                                    <span>+234 800 000 0000</span>
+                                </li>
+                                <li>
+                                    <img src="assets/svg/email.svg" alt="" class="footer_contact_icon">
+                                    <span>hello@aurelle.com</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="footer_bottom">
+                        <div class="footer_rule"></div>
+                        <div class="footer_bottom_inner">
+                            <p class="footer_copy">&copy; 2025 Aurelle. All rights reserved.</p>
+                            <div class="footer_legal">
+                                <a href="#">Privacy policy</a>
+                                <span class="footer_dot">·</span>
+                                <a href="#">Terms of service</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </main>
+
+
+        </div>
+        <script src="scripts/script.js"></script>
+        <script src="scripts/nav_scripts.js"></script>
+        
+    </body>
+   
+</html>

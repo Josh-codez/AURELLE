@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-display: 'Playfair Display', Georgia, serif;
+    font-body:    'Inter', -apple-system, sans-serif;
+
+}
+body{
+    background: #f8f3ee;
+}
+.container{
+    display:flex;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --rich-mahogany:      #3f0d12;
+  --rich-mahogany-mid:  #521520;
+  --rich-mahogany-deep: #2a080c;
+  --ruby-red:           #a71d31;
+  --ruby-deep:          #7a0f22;
+  --lemon-chiffon:      #f1f0cc;
+  --soft-fawn:          #d5bf86;
+  --faded-copper:       #8d775f;
+
+  --nav-width: 200px;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', -apple-system, sans-serif;
+
+  --ease:   cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast: 0.18s;
+  --t-base: 0.26s;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.nav_bar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--nav-width);
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(
+      170deg,
+      var(--rich-mahogany-mid)  0%,
+      var(--rich-mahogany)     55%,
+      var(--rich-mahogany-deep)100%
+    );
+  box-shadow: 4px 0 40px rgba(0, 0, 0, 0.55);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.nav_bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(213, 191, 134, 0.07) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+  pointer-events: none;
+  z-index: 0;
+}
+.image_cont {
+  position: relative;
+  z-index: 1;
+  padding: 28px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  border-bottom: 1px solid rgba(213, 191, 134, 0.15);
+}
+
+.image_cont .crest {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(213, 191, 134, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 11px;
+  flex-shrink: 0;
+}
+
+.image_cont .crest-letter {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--soft-fawn);
+  line-height: 1;
+}
+
+.image_cont img {
+  width: 100%;
+  max-width: 130px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.image_cont svg {
+  width: 100%;
+  max-width: 130px;
+  height: auto;
+  stroke: var(--soft-fawn);
+  display: block;
+}
+
+.image_cont .brand_name {
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: var(--lemon-chiffon);
+  text-align: center;
+}
+
+.image_cont .brand_sub {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--faded-copper);
+  text-align: center;
+  margin-top: 3px;
+}
+
+.image_cont::after {
+  content: '';
+  display: block;
+  width: 55%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--soft-fawn), transparent);
+  margin-top: 14px;
+  opacity: 0.35;
+}
+.nav_group_label {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  color: var(--faded-copper);
+  padding: 14px 20px 4px;
+  opacity: 0.75;
+  position: relative;
+  z-index: 1;
+}
+.navli_cont {
+  position: relative;
+  z-index: 1;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.nav_divider {
+  height: 1px;
+  background: rgba(213, 191, 134, 0.13);
+  margin: 8px 18px;
+}
+
+.navli_cont li {
+  position: relative;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 0 10px 10px 0;
+  margin-right: 14px;
+  overflow: hidden;
+  transition: background-color var(--t-fast) var(--ease);
+}
+
+.navli_cont li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  transform-origin: center;
+  width: 2.5px;
+  height: 54%;
+  background: var(--soft-fawn);
+  border-radius: 0 2px 2px 0;
+  opacity: 0;
+  transition:
+    transform var(--t-base) var(--ease),
+    opacity   var(--t-base) ease;
+}
+
+.navli_cont li:hover::before,
+.navli_cont li.active::before {
+  transform: translateY(-50%) scaleY(1);
+  opacity: 1;
+}
+
+.navli_cont li.active::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  background: rgba(241, 240, 204, 0.55);
+  border-radius: 50%;
+}
+
+.navli_cont li:hover {
+  background-color: rgba(167, 29, 49, 0.25);
+}
+
+.navli_cont li.active {
+  background-color: var(--ruby-red);
+  box-shadow:
+    0 4px 22px rgba(167, 29, 49, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.navli_cont li a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 14px 0 18px;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: rgba(241, 240, 204, 0.52);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  transition: color var(--t-fast) ease;
+}
+
+.navli_cont li:hover a,
+.navli_cont li.active a {
+  color: var(--lemon-chiffon);
+  font-weight: 500;
+}
+
+.nav_icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity var(--t-fast) ease;
+}
+
+.navli_cont li:hover .nav_icon,
+.navli_cont li.active .nav_icon {
+  opacity: 1;
+}
+.nav_footer {
+  position: relative;
+  z-index: 1;
+  padding: 14px 18px;
+  border-top: 1px solid rgba(213, 191, 134, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav_avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--ruby-deep);
+  border: 1px solid rgba(213, 191, 134, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--soft-fawn);
+  flex-shrink: 0;
+}
+
+.nav_user_name {
+  font-family: var(--font-body); 
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--lemon-chiffon);
+  line-height: 1.3;
+}
+
+.nav_user_role {
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: var(--faded-copper);
+  margin-top: 1px;
+}
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background: #f8f5f2;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 260px;
+            height: 100vh;
+            background: #4a1c1c;
+            color: white;
+            z-index: 100;
+        }
+        .main {
+            margin-left: 260px;
+            padding: 40px;
+        }
+        .contact-container {
+            background: #4a1c1c;
+            color: white;
+            padding: 50px;
+            border-radius: 12px;
+            max-width: 1100px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            color: white;
+        }
+        button {
+            background: #f59e0b;
+            color: #4a1c1c;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .info p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+    </style>
+<body>
+     
+</head>
+<body>
+    <div class="container">
+           <nav class="nav_bar" aria-label="Main navigation">
+
+                <div class="image_cont">
+                    <svg width="100" height="100" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="200" cy="200" r="152" fill="none" stroke="#D5BF86" stroke-width="1.2"/>
+                        <circle cx="200" cy="200" r="138" fill="none" stroke="#D5BF86" stroke-width="2"/>
+                        <circle cx="200" cy="200" r="130" fill="none" stroke="#8D775F" stroke-width="0.6" opacity="0.6"/>
+                        <polygon points="200,57 204.5,64 200,71 195.5,64" fill="#D5BF86"/>
+                        <polygon points="200,329 204.5,336 200,343 195.5,336" fill="#D5BF86"/>
+                        <polygon points="57,200 64,204.5 71,200 64,195.5" fill="#D5BF86"/>
+                        <polygon points="329,200 336,204.5 343,200 336,195.5" fill="#D5BF86"/>
+                        <g transform="translate(200, 108)">
+                            <rect x="-22" y="14" width="44" height="5" rx="1" fill="#D5BF86" opacity="0.9"/>
+                            <polygon points="-22,14 -22,-2 -11,8 0,-4 11,8 22,-2 22,14" fill="#D5BF86" opacity="0.85"/>
+                            <circle cx="0" cy="-4" r="2.2" fill="#A71D31" stroke="#D5BF86" stroke-width="0.8"/>
+                            <circle cx="-11" cy="8" r="1.5" fill="#D5BF86"/>
+                            <circle cx="11"  cy="8" r="1.5" fill="#D5BF86"/>
+                            <circle cx="-22" cy="-2" r="1.5" fill="#D5BF86"/>
+                            <circle cx="22"  cy="-2" r="1.5" fill="#D5BF86"/>
+                        </g>
+                        <path d="M200 138 L253 275 L245 275 L230 238 L170 238 L156 275 L147 275 Z M176 228 L200 165 L224 228 Z" fill="#D5BF86" opacity="0.92"/>
+                        <rect x="134" y="275" width="26" height="2.5" rx="1" fill="#D5BF86" opacity="0.9"/>
+                        <rect x="240" y="275" width="26" height="2.5" rx="1" fill="#D5BF86" opacity="0.9"/>
+                        <rect x="158" y="229" width="84" height="2" rx="1" fill="#D5BF86" opacity="0.85"/>
+                        <polygon points="200,293 203.5,298 200,303 196.5,298" fill="#A71D31" stroke="#D5BF86" stroke-width="0.8"/>
+                        <text x="200" y="382" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="28" letter-spacing="10" fill="#D5BF86" font-weight="400">AURELLE</text>
+                        <text x="200" y="400" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" letter-spacing="5" fill="#8D775F" font-weight="400" font-style="italic">Fine Dining</text>
+                    </svg>
+                </div>
+
+                <ul class="navli_cont">
+                    <div class="nav_divider"></div>
+                    <li>
+                        <a href="#home">
+                            <img src="assets/svg/home.svg" alt="Home" class="nav_icon">
+                            Home
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="order.html">
+                            <img src="assets/svg/cart.svg" alt="Order" class="nav_icon">
+                            Order
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reservations.html">
+                            <img src="assets/svg/reservation.svg" alt="Reservations" class="nav_icon">
+                            Reservations
+                        </a>
+                    </li>
+       
+                    <li>
+                        <a href="#about">
+                            <img src="assets/svg/about.svg" alt="About us" class="nav_icon">
+                            About us
+                        </a>
+                    </li>
+                    <div class="nav_divider"></div>
+                    <li>
+                        <a href="#contact">
+                            <img src="assets/svg/contact.svg" alt="Contact" class="nav_icon">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="res_info"></div>
+            </nav>
+ <nav>
+
+
+    <div class="main">
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+            <div class="grid">
+                <div>
+                    <h2>Send Us a Message</h2>
+                    <form>
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Subject">
+                        <textarea rows="6" placeholder="Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                <div class="info">
+                    <h2>Get in Touch</h2>
+                    <p><strong>Address:</strong><br>123 Aurelle Lane, Foodie City, New York, NY 10001, USA</p>
+                    <p><strong>Phone:</strong><br>+1 (212) 555-7890</p>
+                    <p><strong>Hours:</strong><br>Mon - Sun: 9:00 AM - 11:00 PM</p>
+                    <p><strong>Email:</strong><br>hello@Aurelle.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+</body>
+</html>

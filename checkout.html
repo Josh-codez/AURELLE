@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>Checkout - Aurelle Fine Dining</title>
+  </head>
+  <body>
+    <section class="tracking_page checkout_page" id="tracking">
+      <div class="tracking_header">
+        <a class="back_link" href="index.html">Back to menu</a>
+        <a class="back_link" href="checkout-vertical.html">Vertical nav</a>
+        <a class="back_link" href="checkout-horizontal.html">Horizontal nav</a>
+        <p class="section_label">Checkout</p>
+        <h1>ORDER TRACKING</h1>
+        <p>Track your food delivery or pickup with your order ID.</p>
+      </div>
+
+      <div class="tracking_layout">
+        <div class="tracking_panel">
+          <div class="tracking_form" id="trackingBox">
+            <label for="orderId">Order ID</label>
+            <div class="tracking_input_row">
+              <input id="orderId" type="text" placeholder="Enter order ID, e.g. AUR-2048" value="AUR-2048">
+              <button type="button" id="trackButton">Track Order</button>
+            </div>
+          </div>
+
+          <div class="tracking_summary">
+            <div>
+              <span>Current status</span>
+              <strong id="currentStatus">Preparing</strong>
+            </div>
+            <div>
+              <span>Estimated time</span>
+              <strong id="estimatedTime">25 minutes</strong>
+            </div>
+          </div>
+
+          <div class="status_bar" aria-label="Order status">
+            <div class="status_step completed">
+              <span class="status_dot"></span>
+              <p>Order received</p>
+            </div>
+            <div class="status_step active">
+              <span class="status_dot"></span>
+              <p>Preparing</p>
+            </div>
+            <div class="status_step">
+              <span class="status_dot"></span>
+              <p>Ready</p>
+            </div>
+            <div class="status_step">
+              <span class="status_dot"></span>
+              <p>Out for delivery</p>
+            </div>
+            <div class="status_step">
+              <span class="status_dot"></span>
+              <p>Delivered</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map_preview" aria-label="Map preview mockup">
+          <div class="map_route"></div>
+          <span class="map_pin restaurant_pin">A</span>
+          <span class="map_pin customer_pin">You</span>
+          <div class="map_card">
+            <strong>Courier route</strong>
+            <p>Frontend map preview</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="tracking.js"></script>
+  </body>
+</html>

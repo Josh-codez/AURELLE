@@ -1,0 +1,200 @@
+<svg width="680" height="820" viewBox="0 0 680 820" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>AURELLE Fine Dining — Luxury Restaurant Logo</title>
+  <desc>A premium monogram logo for AURELLE restaurant featuring a refined letter A inside a thin circular crest with diamond accent, rendered in gold and copper tones on a rich mahogany background.</desc>
+
+  <defs>
+    <linearGradient id="goldSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F1F0CC;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#D5BF86;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#8D775F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D5BF86;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldSheen2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F1F0CC;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#D5BF86;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8D775F;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="rubyAccent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#A71D31;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3F0D12;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2A0810;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3F0D12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2A0810;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dividerGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3F0D12;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#8D775F;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D5BF86;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#8D775F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3F0D12;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="680" height="820" fill="url(#bgGrad)" />
+
+  <!-- Corner ornaments -->
+  <g stroke="#8D775F" stroke-width="0.5" fill="none" opacity="0.35">
+    <path d="M 30 30 L 30 70 M 30 30 L 70 30" />
+    <path d="M 650 30 L 650 70 M 650 30 L 610 30" />
+    <path d="M 30 790 L 30 750 M 30 790 L 70 790" />
+    <path d="M 650 790 L 650 750 M 650 790 L 610 790" />
+  </g>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--  CREST / CIRCULAR FRAME                -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <!-- Outer glow ring -->
+  <circle cx="340" cy="270" r="162" fill="none" stroke="#D5BF86" stroke-width="0.4" opacity="0.25" />
+  <!-- Outer decorative ring -->
+  <circle cx="340" cy="270" r="152" fill="none" stroke="url(#goldSheen2)" stroke-width="0.8" />
+  <!-- Thin gap ring -->
+  <circle cx="340" cy="270" r="145" fill="none" stroke="#8D775F" stroke-width="0.3" opacity="0.5" />
+  <!-- Main crest ring -->
+  <circle cx="340" cy="270" r="138" fill="none" stroke="url(#goldSheen)" stroke-width="1.6" />
+  <!-- Inner decorative ring -->
+  <circle cx="340" cy="270" r="130" fill="none" stroke="#8D775F" stroke-width="0.4" opacity="0.6" />
+  <!-- Inner fill for depth -->
+  <circle cx="340" cy="270" r="128" fill="#3F0D12" fill-opacity="0.45" />
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--  CARDINAL DIAMOND ACCENTS              -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <!-- Top diamond -->
+  <polygon points="340,127 344.5,134 340,141 335.5,134" fill="url(#goldSheen)" />
+  <!-- Bottom diamond -->
+  <polygon points="340,399 344.5,406 340,413 335.5,406" fill="url(#goldSheen)" />
+  <!-- Left diamond -->
+  <polygon points="197,270 204,274.5 211,270 204,265.5" fill="url(#goldSheen)" />
+  <!-- Right diamond -->
+  <polygon points="469,270 476,274.5 483,270 476,265.5" fill="url(#goldSheen)" />
+
+  <!-- Small dot accents between diamonds -->
+  <circle cx="268" cy="148" r="2" fill="#8D775F" opacity="0.7"/>
+  <circle cx="412" cy="148" r="2" fill="#8D775F" opacity="0.7"/>
+  <circle cx="268" cy="392" r="2" fill="#8D775F" opacity="0.7"/>
+  <circle cx="412" cy="392" r="2" fill="#8D775F" opacity="0.7"/>
+  <circle cx="218" cy="200" r="2" fill="#8D775F" opacity="0.7"/>
+  <circle cx="218" cy="340" r="2" fill="#8D775F" opacity="0.7"/>
+  <circle cx="462" cy="200" r="2" fill="#8D775F" opacity="0.7"/>
+  <circle cx="462" cy="340" r="2" fill="#8D775F" opacity="0.7"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--  CROWN ACCENT                          -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <g transform="translate(340, 178)">
+    <!-- Crown base bar -->
+    <rect x="-22" y="14" width="44" height="5" rx="1" fill="url(#goldSheen)" opacity="0.9"/>
+    <!-- Crown body filled shape -->
+    <polygon points="-22,14 -22,-2 -11,8 0,-4 11,8 22,-2 22,14" fill="url(#goldSheen)" opacity="0.85"/>
+    <!-- Crown gem: ruby center -->
+    <circle cx="0" cy="-4" r="2.2" fill="#A71D31" stroke="#D5BF86" stroke-width="0.8"/>
+    <!-- Crown side gems -->
+    <circle cx="-11" cy="8" r="1.5" fill="#D5BF86"/>
+    <circle cx="11" cy="8" r="1.5" fill="#D5BF86"/>
+    <circle cx="-22" cy="-2" r="1.5" fill="#D5BF86"/>
+    <circle cx="22" cy="-2" r="1.5" fill="#D5BF86"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--  MONOGRAM "A"                          -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <!-- Solid serif A -->
+  <path d="
+    M 340 208
+    L 393 345
+    L 385 345
+    L 370 308 L 310 308 L 296 345
+    L 287 345
+    Z
+    M 316 298 L 340 235 L 364 298 Z
+  " fill="url(#goldSheen)" opacity="0.92"/>
+
+  <!-- Bottom serifs -->
+  <rect x="274" y="345" width="26" height="2.5" rx="1" fill="url(#goldSheen)" opacity="0.9"/>
+  <rect x="380" y="345" width="26" height="2.5" rx="1" fill="url(#goldSheen)" opacity="0.9"/>
+
+  <!-- Crossbar -->
+  <rect x="298" y="299" width="84" height="2" rx="1" fill="url(#goldSheen)" opacity="0.85"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--  RUBY DIAMOND BELOW A                  -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <polygon points="340,363 343.5,368 340,373 336.5,368" fill="#A71D31" stroke="#D5BF86" stroke-width="0.8"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--  INNER HORIZONTAL RULES                -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <line x1="230" y1="270" x2="302" y2="270" stroke="url(#goldSheen)" stroke-width="0.5" opacity="0.5"/>
+  <line x1="378" y1="270" x2="450" y2="270" stroke="url(#goldSheen)" stroke-width="0.5" opacity="0.5"/>
+  <polygon points="340,265 344,270 340,275 336,270" fill="none" stroke="#8D775F" stroke-width="0.6" opacity="0.4"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--  RULE BETWEEN CREST AND WORDMARK       -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <line x1="140" y1="444" x2="540" y2="444" stroke="url(#dividerGold)" stroke-width="0.7"/>
+  <polygon points="340,440 344,444 340,448 336,444" fill="#D5BF86"/>
+  <circle cx="320" cy="444" r="1.5" fill="#8D775F" opacity="0.7"/>
+  <circle cx="360" cy="444" r="1.5" fill="#8D775F" opacity="0.7"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--  WORDMARK "AURELLE"                    -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <text
+    x="340" y="510"
+    text-anchor="middle"
+    font-family="'Didot', 'Bodoni MT', 'Playfair Display', 'Times New Roman', serif"
+    font-size="62"
+    font-weight="400"
+    letter-spacing="18"
+    fill="url(#goldSheen)"
+  >AURELLE</text>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--  RULE UNDER WORDMARK                   -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <line x1="190" y1="528" x2="490" y2="528" stroke="url(#dividerGold)" stroke-width="0.6"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--  TAGLINE "Fine Dining"                 -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <line x1="224" y1="558" x2="260" y2="558" stroke="#8D775F" stroke-width="0.6" opacity="0.7"/>
+  <line x1="420" y1="558" x2="456" y2="558" stroke="#8D775F" stroke-width="0.6" opacity="0.7"/>
+
+  <text
+    x="340" y="563"
+    text-anchor="middle"
+    font-family="'Cormorant Garamond', 'Garamond', 'Palatino Linotype', 'Times New Roman', serif"
+    font-size="17"
+    font-weight="400"
+    font-style="italic"
+    letter-spacing="7"
+    fill="#D5BF86"
+    opacity="0.88"
+  >Fine Dining</text>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--  BOTTOM ORNAMENT                       -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <line x1="200" y1="596" x2="480" y2="596" stroke="url(#dividerGold)" stroke-width="0.5" opacity="0.5"/>
+
+  <circle cx="300" cy="616" r="1.5" fill="#8D775F" opacity="0.5"/>
+  <circle cx="320" cy="616" r="2"   fill="#D5BF86" opacity="0.6"/>
+  <circle cx="340" cy="616" r="3"   fill="#8D775F" opacity="0.55"/>
+  <circle cx="360" cy="616" r="2"   fill="#D5BF86" opacity="0.6"/>
+  <circle cx="380" cy="616" r="1.5" fill="#8D775F" opacity="0.5"/>
+
+</svg>

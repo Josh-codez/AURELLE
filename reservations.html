@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurelle — Reservations</title>
+  <link rel="stylesheet" href="css/reservations.css">
+  <link rel="stylesheet" href="css/nav.css">
+
+</head>
+<body>
+<div class="cont">
+
+  
+  <nav class="nav_bar" aria-label="Main navigation">
+    <div class="image_cont">
+      <svg width="110" height="110" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="200" cy="200" r="152" fill="none" stroke="#D5BF86" stroke-width="1.2"/>
+        <circle cx="200" cy="200" r="138" fill="none" stroke="#D5BF86" stroke-width="2"/>
+        <circle cx="200" cy="200" r="130" fill="none" stroke="#8D775F" stroke-width="0.6" opacity="0.6"/>
+        <polygon points="200,57 204.5,64 200,71 195.5,64" fill="#D5BF86"/>
+        <polygon points="200,329 204.5,336 200,343 195.5,336" fill="#D5BF86"/>
+        <polygon points="57,200 64,204.5 71,200 64,195.5" fill="#D5BF86"/>
+        <polygon points="329,200 336,204.5 343,200 336,195.5" fill="#D5BF86"/>
+        <g transform="translate(200, 108)">
+          <rect x="-22" y="14" width="44" height="5" rx="1" fill="#D5BF86" opacity="0.9"/>
+          <polygon points="-22,14 -22,-2 -11,8 0,-4 11,8 22,-2 22,14" fill="#D5BF86" opacity="0.85"/>
+          <circle cx="0" cy="-4" r="2.2" fill="#A71D31" stroke="#D5BF86" stroke-width="0.8"/>
+          <circle cx="-11" cy="8" r="1.5" fill="#D5BF86"/>
+          <circle cx="11"  cy="8" r="1.5" fill="#D5BF86"/>
+          <circle cx="-22" cy="-2" r="1.5" fill="#D5BF86"/>
+          <circle cx="22"  cy="-2" r="1.5" fill="#D5BF86"/>
+        </g>
+        <path d="M200 138 L253 275 L245 275 L230 238 L170 238 L156 275 L147 275 Z M176 228 L200 165 L224 228 Z" fill="#D5BF86" opacity="0.92"/>
+        <rect x="134" y="275" width="26" height="2.5" rx="1" fill="#D5BF86" opacity="0.9"/>
+        <rect x="240" y="275" width="26" height="2.5" rx="1" fill="#D5BF86" opacity="0.9"/>
+        <rect x="158" y="229" width="84" height="2"   rx="1" fill="#D5BF86" opacity="0.85"/>
+        <polygon points="200,293 203.5,298 200,303 196.5,298" fill="#A71D31" stroke="#D5BF86" stroke-width="0.8"/>
+        <text x="200" y="382" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="28" letter-spacing="10" fill="#D5BF86" font-weight="400">AURELLE</text>
+        <text x="200" y="400" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" letter-spacing="5" fill="#8D775F" font-weight="400" font-style="italic">Fine Dining</text>
+      </svg>
+    </div>
+
+    <ul class="navli_cont">
+      <div class="nav_divider"></div>
+      <li>
+        <a href="index.html">
+          <img src="assets/svg/home.svg" alt="" class="nav_icon" aria-hidden="true">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="order.html">
+          <img src="assets/svg/cart.svg" alt="" class="nav_icon" aria-hidden="true">
+          Order
+        </a>
+      </li>
+      <li class="active">
+        <a href="reservations.html">
+          <img src="assets/svg/reservation.svg" alt="" class="nav_icon" aria-hidden="true">
+          Reservations
+        </a>
+      </li>
+      <li>
+        <a href="#location">
+          <img src="assets/svg/location.svg" alt="" class="nav_icon" aria-hidden="true">
+          Location
+        </a>
+      </li>
+      <li>
+        <a href="#about">
+          <img src="assets/svg/about.svg" alt="" class="nav_icon" aria-hidden="true">
+          About us
+        </a>
+      </li>
+      <div class="nav_divider"></div>
+      <li>
+        <a href="#contact">
+          <img src="assets/svg/contact.svg" alt="" class="nav_icon" aria-hidden="true">
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  
+  <main class="main_cont">
+    <section class="restaurant-section">
+
+      <div class="section-header">
+        <h1 class="section-title">Reserve a Table</h1>
+        <span class="section-subtitle">Select a table to begin</span>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-dot available"></div>
+          Available
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot selected"></div>
+          Selected
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot occupied"></div>
+          Occupied
+        </div>
+      </div>
+
+      <div class="floor_plan" id="floor_plan" role="group" aria-label="Restaurant floor plan — choose a table">
+
+        <p class="zone_label">Window Row</p>
+
+        <div class="table table--round" id="table_1" data-name="Table 1" data-seats="2"
+             style="--w:64px; --h:64px; --radius:40px; --seats:2;">
+          <div class="table_surface"></div>
+          <span class="chair" style="--i:0"></span>
+          <span class="chair" style="--i:1"></span>
+          <button class="table_btn" aria-label="Select Table 1 — 2 seats">
+            <span class="table_btn_num">1</span>
+            <span class="table_btn_seats">2 seats</span>
+          </button>
+        </div>
+
+        <div class="table table--round" id="table_2" data-name="Table 2" data-seats="2"
+             style="--w:64px; --h:64px; --radius:40px; --seats:2;">
+          <div class="table_surface"></div>
+          <span class="chair" style="--i:0"></span>
+          <span class="chair" style="--i:1"></span>
+          <button class="table_btn" aria-label="Select Table 2 — 2 seats">
+            <span class="table_btn_num">2</span>
+            <span class="table_btn_seats">2 seats</span>
+          </button>
+        </div>
+
+        <div class="table table--round" id="table_3" data-name="Table 3" data-seats="2"
+             style="--w:64px; --h:64px; --radius:40px; --seats:2;">
+          <div class="table_surface"></div>
+          <span class="chair" style="--i:0"></span>
+          <span class="chair" style="--i:1"></span>
+          <button class="table_btn" aria-label="Select Table 3 — 2 seats">
+            <span class="table_btn_num">3</span>
+            <span class="table_btn_seats">2 seats</span>
+          </button>
+        </div>
+
+        <p class="zone_label">Main Floor</p>
+
+        <div class="table table--square" id="table_4" data-name="Table 4" data-seats="4"
+             style="--w:78px; --h:78px; --radius:52px; --seats:4;">
+          <div class="table_surface"></div>
+          <span class="chair" style="--i:0"></span>
+          <span class="chair" style="--i:1"></span>
+          <span class="chair" style="--i:2"></span>
+          <span class="chair" style="--i:3"></span>
+          <button class="table_btn" aria-label="Select Table 4 — 4 seats">
+            <span class="table_btn_num">4</span>
+            <span class="table_btn_seats">4 seats</span>
+          </button>
+        </div>
+
+        <div class="table table--rect" id="table_6" data-name="Table 6" data-seats="6"
+             style="--w:120px; --h:68px; --radius:66px; --seats:6;">
+          <div class="table_surface"></div>
+          <span class="chair" style="--i:0"></span>
+          <span class="chair" style="--i:1"></span>
+          <span class="chair" style="--i:2"></span>
+          <span class="chair" style="--i:3"></span>
+          <span class="chair" style="--i:4"></span>
+          <span class="chair" style="--i:5"></span>
+          <button class="table_btn" aria-label="Select Table 6 — 6 seats">
+            <span class="table_btn_num">6</span>
+            <span class="table_btn_seats">6 seats</span>
+          </button>
+        </div>
+
+        <div class="table table--square" id="table_7" data-name="Table 7" data-seats="4"
+             style="--w:78px; --h:78px; --radius:52px; --seats:4;">
+          <div class="table_surface"></div>
+          <span class="chair" style="--i:0"></span>
+          <span class="chair" style="--i:1"></span>
+          <span class="chair" style="--i:2"></span>
+          <span class="chair" style="--i:3"></span>
+          <button class="table_btn" aria-label="Select Table 7 — 4 seats">
+            <span class="table_btn_num">7</span>
+            <span class="table_btn_seats">4 seats</span>
+          </button>
+        </div>
+
+        <div class="table table--square" id="table_5" data-name="Table 5" data-seats="4"
+             style="--w:78px; --h:78px; --radius:52px; --seats:4;">
+          <div class="table_surface"></div>
+          <span class="chair" style="--i:0"></span>
+          <span class="chair" style="--i:1"></span>
+          <span class="chair" style="--i:2"></span>
+          <span class="chair" style="--i:3"></span>
+          <button class="table_btn" aria-label="Select Table 5 — 4 seats">
+            <span class="table_btn_num">5</span>
+            <span class="table_btn_seats">4 seats</span>
+          </button>
+        </div>
+
+        <div class="table table--rect" id="table_8" data-name="Table 8" data-seats="6"
+             style="--w:120px; --h:68px; --radius:66px; --seats:6;">
+          <div class="table_surface"></div>
+          <span class="chair" style="--i:0"></span>
+          <span class="chair" style="--i:1"></span>
+          <span class="chair" style="--i:2"></span>
+          <span class="chair" style="--i:3"></span>
+          <span class="chair" style="--i:4"></span>
+          <span class="chair" style="--i:5"></span>
+          <button class="table_btn" aria-label="Select Table 8 — 6 seats">
+            <span class="table_btn_num">8</span>
+            <span class="table_btn_seats">6 seats</span>
+          </button>
+        </div>
+
+        <p class="zone_label">Private Corner</p>
+
+        <div class="table table--round" id="table_9" data-name="Table 9" data-seats="4"
+             style="--w:80px; --h:80px; --radius:54px; --seats:4;">
+          <div class="table_surface"></div>
+          <span class="chair" style="--i:0"></span>
+          <span class="chair" style="--i:1"></span>
+          <span class="chair" style="--i:2"></span>
+          <span class="chair" style="--i:3"></span>
+          <button class="table_btn" aria-label="Select Table 9 — 4 seats">
+            <span class="table_btn_num">9</span>
+            <span class="table_btn_seats">4 seats</span>
+          </button>
+        </div>
+
+        <div class="table table--round" id="table_10" data-name="Table 10" data-seats="4"
+             style="--w:80px; --h:80px; --radius:54px; --seats:4;">
+          <div class="table_surface"></div>
+          <span class="chair" style="--i:0"></span>
+          <span class="chair" style="--i:1"></span>
+          <span class="chair" style="--i:2"></span>
+          <span class="chair" style="--i:3"></span>
+          <button class="table_btn" aria-label="Select Table 10 — 4 seats">
+            <span class="table_btn_num">10</span>
+            <span class="table_btn_seats">4 seats</span>
+          </button>
+        </div>
+
+        <div class="table table--round table--feature" id="table_11" data-name="Table 11" data-seats="6"
+             style="--w:104px; --h:104px; --radius:66px; --seats:6;">
+          <div class="table_surface"></div>
+          <span class="chair" style="--i:0"></span>
+          <span class="chair" style="--i:1"></span>
+          <span class="chair" style="--i:2"></span>
+          <span class="chair" style="--i:3"></span>
+          <span class="chair" style="--i:4"></span>
+          <span class="chair" style="--i:5"></span>
+          <button class="table_btn" aria-label="Select Table 11 — 6 seats">
+            <span class="table_btn_num">11</span>
+            <span class="table_btn_seats">6 seats</span>
+          </button>
+        </div>
+
+      </div>
+
+      
+    </section>
+  </main>
+
+  
+  <aside class="right_bar" id="right_bar">
+
+    <div class="calendar">
+      <div class="cal-header">
+        <h2 id="cal-month-label">June 2026</h2>
+        <div class="cal-nav">
+          <button id="cal-prev" aria-label="Previous month">&#8249;</button>
+          <button id="cal-next" aria-label="Next month">&#8250;</button>
+        </div>
+      </div>
+
+      <div class="cal-days" aria-hidden="true">
+        <span>S</span><span>M</span><span>T</span><span>W</span>
+        <span>T</span><span>F</span><span>S</span>
+      </div>
+
+      <div class="cal-grid" id="cal-grid" role="grid" aria-label="Reservation calendar"></div>
+    </div>
+
+    <div class="cal-divider"></div>
+
+    <div class="res-panel">
+      <p class="res-panel-title">Your Selection</p>
+
+      <div class="res-info-card" id="res-card">
+        <p class="table-name"  id="res-table-name">—</p>
+        <p class="table-seats" id="res-table-seats">—</p>
+        <p class="table-seats" id="res-date-display" style="margin-top:4px; color: rgba(213,191,134,0.6);">—</p>
+      </div>
+
+      <p class="no-selection-hint" id="no-selection-hint">
+        Select a table and<br>a date to reserve
+      </p>
+
+      <button class="res-confirm-btn" id="res-confirm-btn">
+        Confirm Reservation
+      </button>
+    </div>
+
+
+    <div class="table_purch_box">
+       
+    </div>
+
+  </aside>
+
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="scripts/reserve.js"></script>
+</body>
+</html>
