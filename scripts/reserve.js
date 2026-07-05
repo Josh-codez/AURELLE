@@ -1,6 +1,7 @@
 const occupied = new Set(['table_3', 'table_7']);
 let selectedTable = null;
 let selectedDate  = null;
+let userBookings  = []; // { id, name, seats, dateLabel }
 
 const today    = new Date();
 let   calYear  = today.getFullYear();
@@ -184,10 +185,15 @@ document.getElementById('res-confirm-btn').addEventListener('click', () => {
   const tableEl   = document.getElementById(selectedTable);
   const btn       = tableEl.querySelector('.table_btn');
   const name      = tableEl.dataset.name;
+  const seats     = tableEl.dataset.seats;
   const [y, m, d] = selectedDate.split('_');
   const dateStr   = MONTHS[+m] + ' ' + d;
+  const dateLabel = MONTHS[+m].slice(0, 3) + ' ' + d;
 
   showToast(name + ' reserved for ' + dateStr);
+
+  userBookings.push({ id: selectedTable, name, seats, dateLabel });
+  renderNavBookings();
 
   
   occupied.add(selectedTable);
@@ -205,9 +211,75 @@ document.getElementById('res-confirm-btn').addEventListener('click', () => {
   buildCalendar();
 });
 
+function renderNavBookings() {
+  const list  = document.getElementById('nav_bookings_list');
+  const empty = document.getElementById('nav_bookings_empty');
+  if (!list) return;
+
+  list.querySelectorAll('.nav_booking_item').forEach(el => el.remove());
+
+  if (userBookings.length === 0) {
+    if (empty) empty.style.display = '';
+    return;
+  }
+  if (empty) empty.style.display = 'none';
+
+  userBookings.forEach(booking => {
+    const li = document.createElement('li');
+    li.className = 'nav_booking_item';
+    li.dataset.tableId = booking.id;
+
+    const info = document.createElement('div');
+    info.className = 'nav_booking_info';
+
+    const name = document.createElement('span');
+    name.className = 'nav_booking_name';
+    name.textContent = booking.name;
+
+    const meta = document.createElement('span');
+    meta.className = 'nav_booking_meta';
+    meta.textContent = booking.seats + ' seats · ' + booking.dateLabel;
+
+    info.append(name, meta);
+
+    const cancelBtn = document.createElement('button');
+    cancelBtn.className = 'nav_booking_cancel';
+    cancelBtn.setAttribute('aria-label', 'Cancel reservation for ' + booking.name);
+    cancelBtn.innerHTML = '&times;';
+    cancelBtn.addEventListener('click', () => cancelBooking(booking.id));
+
+    li.append(info, cancelBtn);
+    list.appendChild(li);
+  });
+}
+
+function cancelBooking(tableId) {
+  const idx = userBookings.findIndex(b => b.id === tableId);
+  if (idx === -1) return;
+  const [removed] = userBookings.splice(idx, 1);
+
+  const tableEl = document.getElementById(tableId);
+  if (tableEl) {
+    occupied.delete(tableId);
+    tableEl.classList.remove('occupied');
+    const btn = tableEl.querySelector('.table_btn');
+    if (btn) {
+      btn.disabled = false;
+      btn.setAttribute('aria-label', 'Select ' + tableEl.dataset.name + ' — ' + tableEl.dataset.seats + ' seats');
+      const seatsLabel = btn.querySelector('.table_btn_seats');
+      if (seatsLabel) seatsLabel.textContent = tableEl.dataset.seats + ' seats';
+    }
+  }
+
+  renderNavBookings();
+  showToast(removed.name + ' reservation cancelled');
+}
+
 function showToast(msg) {
   const toast = document.getElementById('toast');
   toast.textContent = ' ' + msg;
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 3200);
 }
+
+renderNavBookings();

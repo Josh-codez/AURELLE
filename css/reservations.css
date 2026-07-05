@@ -26,16 +26,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ---------------------------------------------------------------------
-   Layout shell — mobile-first.
-   Below 861px the nav / floor plan / reservation sidebar stack in normal
-   document flow. At 861px+ the original fixed three-column app-shell
-   (nav | content | right bar) is restored.
-   NOTE: nav.css is a separate stylesheet that wasn't part of this pass —
-   these rules only manage `.cont` / `.main_cont` / `.right_bar` from this
-   file. If `.nav_bar` itself is hard-coded to a fixed width in nav.css,
-   it may need its own small-screen rules to match.
---------------------------------------------------------------------- */
+/* Layout */
 body {
   font-family: var(--font-body);
   background: var(--lemon-chiffon);
@@ -118,13 +109,7 @@ body {
 .legend-dot.selected  { background: var(--ruby-red); }
 .legend-dot.occupied  { background: rgba(141, 119, 95, 0.4); }
 
-/* ---------------------------------------------------------------------
-   Floor plan — real DOM tables (div + button), grouped into zones.
-   Mobile-first: an auto-fit grid lets tables wrap naturally into
-   however many columns fit. From 861px up, an explicit 12-column
-   grid staggers tables into a floor-plan-like arrangement instead
-   of one uniform row.
---------------------------------------------------------------------- */
+/* Floor plan */
 .floor_plan {
   width: 100%;
   display: grid;
@@ -158,7 +143,7 @@ body {
   margin-top: 0.35rem;
 }
 
-/* -- table unit ------------------------------------------------------- */
+/* Table */
 .table {
   --table-fill:   rgba(255, 250, 236, 0.96);
   --table-stroke: #c9a227;
@@ -170,6 +155,7 @@ body {
 
   position: relative;
   width: var(--w, 72px);
+  max-width: 100%;
   height: var(--h, 72px);
   justify-self: center;
 }
@@ -280,16 +266,6 @@ body {
   transition: color var(--t-base) var(--ease);
 }
 
-@media (max-width: 480px) {
-  .floor_plan {
-    grid-template-columns: repeat(auto-fit, minmax(78px, 1fr));
-    gap: 1.25rem 0.5rem;
-    padding: 1.25rem 0.85rem 1.5rem;
-  }
-  .table_btn_num  { font-size: 13px; }
-  .table_btn_seats{ font-size: 7px; }
-}
-
 .toast {
   position: fixed;
   bottom: 2rem;
@@ -317,8 +293,110 @@ body {
   opacity: 1;
 }
 
-/* Right bar — mobile-first: an in-flow panel stacked under the floor
-   plan. From 861px up it becomes the original fixed right-hand rail. */
+/* Nav — booked tables */
+.nav_bookings {
+  width: 100%;
+  padding: 1rem 1.1rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-top: 1px solid rgba(213, 191, 134, 0.15);
+  margin-top: auto;
+}
+
+.nav_bookings_title {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faded-copper);
+}
+
+.nav_bookings_list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+.nav_bookings_list::-webkit-scrollbar       { width: 3px; }
+.nav_bookings_list::-webkit-scrollbar-track { background: transparent; }
+.nav_bookings_list::-webkit-scrollbar-thumb {
+  background: rgba(213, 191, 134, 0.25);
+  border-radius: 2px;
+}
+
+.nav_bookings_empty {
+  font-size: 0.66rem;
+  font-style: italic;
+  color: rgba(213, 191, 134, 0.4);
+  padding: 4px 2px;
+}
+
+.nav_booking_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(213, 191, 134, 0.12);
+  animation: nav_booking_in 0.25s ease;
+}
+
+@keyframes nav_booking_in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav_booking_info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.nav_booking_name {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  color: var(--soft-fawn);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav_booking_meta {
+  font-size: 0.6rem;
+  color: var(--faded-copper);
+  white-space: nowrap;
+}
+
+.nav_booking_cancel {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(213, 191, 134, 0.25);
+  background: transparent;
+  color: var(--faded-copper);
+  font-size: 0.7rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s ease;
+}
+.nav_booking_cancel:hover {
+  background: rgba(167, 29, 49, 0.35);
+  border-color: var(--ruby-red);
+  color: var(--soft-fawn);
+}
+
+/* Right bar */
 .right_bar {
   width: 100%;
   background: var(--rich-mahogany);
@@ -330,7 +408,7 @@ body {
   gap: 1rem;
 }
 
-/*calender*/
+/* Calendar */
 
 .calendar {
   width: 100%;
@@ -453,7 +531,7 @@ body {
   background: rgba(213, 191, 134, 0.15);
 }
 
-/*reserve sec*/
+/* Reserve */
 .res-panel {
   width: 100%;
   max-width: 340px;
@@ -520,11 +598,139 @@ body {
   line-height: 1.5;
 }
 
-/* =======================================================================
-   Desktop app-shell (861px+): fixed nav | scrolling content | fixed
-   right bar, and the floor plan switches from auto-fit wrap to an
-   explicit, staggered 12-column arrangement.
-======================================================================= */
+/* ============================================================
+   RESPONSIVE
+   Tiers: ≤380 / ≤480 / 481–767 / 768–860 / ≥861 (desktop)
+          861–1100 (small laptop) / ≥1440 (large desktop)
+   Below 861px the layout stacks (nav → main → sidebar).
+   At 861px it switches to the fixed three-column layout.
+   ============================================================ */
+
+/* Small phones — 380px and down */
+@media (max-width: 380px) {
+  .main_cont {
+    padding: 1.25rem 0.85rem 2rem;
+  }
+  .section-title    { font-size: 1.05rem; }
+  .section-subtitle { font-size: 0.66rem; }
+  .legend { gap: 0.45rem 0.85rem; }
+
+  .floor_plan {
+    grid-template-columns: repeat(auto-fit, minmax(66px, 1fr));
+    gap: 1rem 0.4rem;
+    padding: 1rem 0.65rem 1.25rem;
+  }
+  .zone_label      { font-size: 0.56rem; }
+  .table_btn_num   { font-size: 12px; }
+  .table_btn_seats { font-size: 6.5px; }
+
+  .right_bar { padding: 1.25rem 1rem 2rem; }
+  .calendar, .cal-divider, .res-panel { max-width: 100%; }
+
+  .nav_bookings { padding: 0.85rem 0.9rem 1.1rem; }
+  .nav_bookings_list { max-height: 140px; }
+}
+
+/* Phones — up to 480px */
+@media (max-width: 480px) {
+  .floor_plan {
+    grid-template-columns: repeat(auto-fit, minmax(78px, 1fr));
+    gap: 1.25rem 0.5rem;
+    padding: 1.25rem 0.85rem 1.5rem;
+  }
+  .table_btn_num   { font-size: 13px; }
+  .table_btn_seats { font-size: 7px; }
+}
+
+/* Large phones / small tablets — 481px to 767px */
+@media (min-width: 481px) and (max-width: 767px) {
+  .main_cont { padding: 2rem 1.5rem 2.5rem; }
+  .floor_plan {
+    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+    gap: 1.75rem 1rem;
+    padding: 1.75rem 1.5rem 2rem;
+  }
+  .right_bar { padding: 1.75rem 1.5rem 2.5rem; }
+}
+
+/* Tablets — 768px to 860px (just before the desktop switch) */
+@media (min-width: 768px) and (max-width: 860px) {
+  .main_cont { padding: 2.25rem 2rem; }
+  .section-title { font-size: 1.32rem; }
+  .floor_plan {
+    grid-template-columns: repeat(auto-fit, minmax(104px, 1fr));
+    gap: 2rem 1.1rem;
+    padding: 2rem 1.75rem 2.25rem;
+  }
+  .right_bar { padding: 2rem; }
+  .calendar, .cal-divider, .res-panel { max-width: 380px; }
+}
+
+/* Mobile — calendar & reservation tracker as two smaller side-by-side boxes.
+   Placed after all the tier-specific blocks above (≤380 / ≤480 / 481–767 / 768–860)
+   so it wins the cascade for every width under 861px, then the desktop
+   three-column layout below takes back over at 861px+. */
+@media (max-width: 860px) {
+  /* Hide the in-nav "Your Reservations" list on mobile — it's redundant
+     with the reservation tracker panel below, and frees up room in the
+     bottom nav. */
+  .nav_bookings {
+    display: none !important;
+  }
+
+  .right_bar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.9rem;
+    /* Extra bottom clearance so the fixed bottom nav doesn't cover
+       the calendar/tracker boxes. Adjust this value to match the
+       actual height of your mobile nav bar (defined in nav.css). */
+    padding: 1.25rem 1rem 6rem;
+  }
+
+  .calendar,
+  .res-panel {
+    max-width: none;
+    margin: 0;
+    flex: 1 1 200px;
+    min-width: 180px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(213, 191, 134, 0.15);
+    border-radius: 10px;
+    padding: 0.85rem 0.75rem;
+  }
+
+  .cal-divider {
+    display: none; /* the two boxes now sit side by side, divider no longer needed */
+  }
+
+  /* Shrink calendar internals to fit the smaller box */
+  .cal-header h2   { font-size: 0.68rem; }
+  .cal-nav button   { width: 18px; height: 18px; font-size: 0.6rem; }
+  .cal-days span    { font-size: 0.5rem; padding: 1px 0 3px; }
+  .cal-grid         { gap: 1px; }
+  .cal-day          { font-size: 0.52rem; }
+
+  /* Shrink reservation tracker internals */
+  .res-panel-title            { font-size: 0.54rem; }
+  .res-info-card               { padding: 0.5rem 0.55rem; }
+  .res-info-card .table-name  { font-size: 0.64rem; }
+  .res-info-card .table-seats { font-size: 0.54rem; }
+  .res-confirm-btn             { padding: 0.5rem; font-size: 0.62rem; }
+  .no-selection-hint           { font-size: 0.54rem; padding: 0.35rem 0; }
+}
+
+/* Extra tightening on very small phones */
+@media (max-width: 420px) {
+  .right_bar { gap: 0.6rem; }
+  .calendar, .res-panel { min-width: 150px; padding: 0.65rem 0.5rem; flex: 1 1 150px; }
+  .cal-header h2 { font-size: 0.6rem; }
+  .cal-day       { font-size: 0.46rem; }
+}
+
+/* Desktop — fixed three-column layout */
 @media (min-width: 861px) {
   body {
     height: 100vh;
@@ -570,12 +776,12 @@ body {
     padding: 2.25rem 1.75rem 2.5rem;
   }
 
-  /* Window Row */
+  /* Window */
   #table_1 { grid-column: 1 / 4; }
   #table_2 { grid-column: 5 / 8;  margin-top: 20px; }
   #table_3 { grid-column: 9 / 12; }
 
-  /* Main Floor — two staggered sub-rows */
+  /* Main floor */
   #table_4 { grid-column: 1 / 4; }
   #table_6 { grid-column: 5 / 9; }
   #table_7 { grid-column: 9 / 12; }
@@ -583,8 +789,36 @@ body {
   #table_5 { grid-column: 2 / 5;  margin-top: 22px; }
   #table_8 { grid-column: 6 / 10; margin-top: 22px; }
 
-  /* Private Corner */
+  /* Private */
   #table_9  { grid-column: 1 / 4; }
   #table_10 { grid-column: 5 / 8; }
   #table_11 { grid-column: 8 / 12; }
+
+  .nav_bookings_list { max-height: 200px; }
+}
+
+/* Small laptops — tighten spacing right above the breakpoint */
+@media (min-width: 861px) and (max-width: 1100px) {
+  .main_cont { padding: 1.5rem 1.1rem; }
+  .right_bar { padding: 1.25rem 0.5rem; }
+  .floor_plan { gap: 1.75rem 0.6rem; padding: 1.75rem 1.25rem 2rem; }
+  .nav_bookings_list { max-height: 140px; }
+}
+
+/* Large desktop — extra breathing room on wide monitors */
+@media (min-width: 1440px) {
+  .restaurant-section { max-width: 1100px; }
+  .floor_plan { gap: 2.75rem 1.25rem; padding: 2.75rem 2.25rem 3rem; }
+  .section-title { font-size: 1.55rem; }
+  :root { --nav-width: 220px; }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

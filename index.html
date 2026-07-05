@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="owlcarousel/dist/assets/owl.theme.default.min.css">
     <title>Aurelle — Fine Dining</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/nav_top.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
 
-    <section class="hero">
-
-        <div class="herotext">
-            <svg class="hero_watermark" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <nav class="nav_top" aria-label="Main navigation">
+        <a href="index.html" class="nav_top_brand">
+            <svg viewBox="40 40 320 320" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="200" cy="200" r="152" fill="none" stroke="#D5BF86" stroke-width="1.2"/>
                 <circle cx="200" cy="200" r="138" fill="none" stroke="#D5BF86" stroke-width="2"/>
                 <circle cx="200" cy="200" r="130" fill="none" stroke="#8D775F" stroke-width="0.6" opacity="0.6"/>
@@ -37,99 +35,106 @@
                 <rect x="158" y="229" width="84" height="2" rx="1" fill="#D5BF86" opacity="0.85"/>
                 <polygon points="200,293 203.5,298 200,303 196.5,298" fill="#A71D31" stroke="#D5BF86" stroke-width="0.8"/>
             </svg>
+            <span>AURELLE</span>
+        </a>
 
-            <p class="eyebrow">Aurelle Fine Dining</p>
-            <h1 class="head">Modern Dining Experience</h1>
+        <ul class="nav_top_links">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="order.html">Menu</a></li>
+            <li><a href="reservations.html">Reservations</a></li>
+        </ul>
+
+        <a href="#contact" class="nav_top_cta">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <div class="herotext">
+            <svg class="hero_watermark" viewBox="40 40 320 320" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="200" cy="200" r="152" fill="none" stroke="#D5BF86" stroke-width="1.2"/>
+                <circle cx="200" cy="200" r="138" fill="none" stroke="#D5BF86" stroke-width="2"/>
+                <circle cx="200" cy="200" r="130" fill="none" stroke="#8D775F" stroke-width="0.6" opacity="0.6"/>
+                <path d="M200 138 L253 275 L245 275 L230 238 L170 238 L156 275 L147 275 Z M176 228 L200 165 L224 228 Z" fill="#D5BF86" opacity="0.5"/>
+            </svg>
+
+            <p class="eyebrow">Aurelle · Fine Dining</p>
+            <h1 class="head">Fresh Flavors, Crafted Daily</h1>
+            <p>Experience dishes made with passion, seasonal ingredients, and a touch of creativity — served in a space where good food brings people together.</p>
             <div class="hero_actions">
-                <button><a href="reservations.html">BOOK A TABLE</a></button>
-                <button><a href="order.html">ORDER NOW</a></button>
+                <a href="reservations.html" class="hero_btn">Book a Table</a>
             </div>
         </div>
 
         <div class="hero_image_wrap">
-            <img src="assets/image/hero_platter.png" alt="Signature dish plated at Aurelle">
+            <picture>
+                <source srcset="assets/image/hero_platter.webp" type="image/webp">
+                <img src="assets/image/hero_platter.png" alt="Slow-braised stew platter, finished with fresh herbs, served in a wooden bowl">
+            </picture>
         </div>
-
     </section>
 
     <section id="order">
         <div class="meals">
-            <p class="section_label">Chef Selection</p>
-            <h1>OUR MENU</h1>
+            <span class="section_label">Chef's Picks</span>
+            <h1>From Our Menu</h1>
 
-            <div class="child menu_cards">
-                <article class="menu_card">
-                    <div class="menu_image menu_image_one">
-                        <img src="images/classical.jpg" alt="Truffle Garden Toast">
-                    </div>
+            <div class="menu_cards">
+                <div class="menu_card">
+                    <div class="menu_image menu_image_one"></div>
                     <div class="menu_content">
-                        <p class="menu_tag">Starter</p>
+                        <span class="menu_tag">Starter</span>
                         <h2>Truffle Garden Toast</h2>
-                        <p>Toasted brioche, whipped goat cheese, mushroom, herbs, and black truffle honey.</p>
-                        <div class="menu_footer">
-                            <span>$18</span>
-                            <button>Order</button>
-                        </div>
+                        <p>Charred sourdough, whipped ricotta, shaved truffle and a drizzle of aged balsamic.</p>
                     </div>
-                </article>
+                </div>
 
-                <article class="menu_card">
+                <div class="menu_card">
                     <div class="menu_image menu_image_two"></div>
                     <div class="menu_content">
-                        <p class="menu_tag">Main</p>
-                        <h2>Ruby Pepper Steak</h2>
-                        <p>Char-grilled beef, roasted garlic mash, pepper jus, and crisp seasonal vegetables.</p>
-                        <div class="menu_footer">
-                            <span>$42</span>
-                            <button>Order</button>
-                        </div>
+                        <span class="menu_tag">Main</span>
+                        <h2>Signature Peppered Stew</h2>
+                        <p>Slow-braised and finished tableside with fresh herbs, served in a rustic wooden bowl.</p>
                     </div>
-                </article>
+                </div>
 
-                <article class="menu_card">
+                <div class="menu_card">
                     <div class="menu_image menu_image_three"></div>
                     <div class="menu_content">
-                        <p class="menu_tag">Seafood</p>
-                        <h2>Lemon Butter Salmon</h2>
-                        <p>Pan-seared salmon, lemon butter sauce, fine herbs, grilled asparagus, and rice pilaf.</p>
-                        <div class="menu_footer">
-                            <span>$36</span>
-                            <button>Order</button>
-                        </div>
+                        <span class="menu_tag">Main</span>
+                        <h2>Herb-Crusted Fish</h2>
+                        <p>Pan-seared catch of the day with a bright citrus and garden-herb crust.</p>
                     </div>
-                </article>
+                </div>
 
-                <article class="menu_card">
+                <div class="menu_card">
                     <div class="menu_image menu_image_four"></div>
                     <div class="menu_content">
-                        <p class="menu_tag">Dessert</p>
-                        <h2>Fawn Silk Cake</h2>
-                        <p>Soft chocolate sponge, caramel cream, toasted almond, and warm berry reduction.</p>
-                        <div class="menu_footer">
-                            <span>$16</span>
-                            <button>Order</button>
-                        </div>
+                        <span class="menu_tag">Dessert</span>
+                        <h2>Spiced Chocolate Tart</h2>
+                        <p>Dark chocolate ganache with warm spice notes and a delicate pastry shell.</p>
                     </div>
-                </article>
+                </div>
+            </div>
+
+            <div class="menu_footer" style="text-align:center; margin-top: 36px;">
+                <button onclick="window.location.href='order.html'">View Full Menu</button>
             </div>
         </div>
     </section>
 
     <section class="abtsec" id="about">
-        <div class="abt">
-            <div class="abtchild">
-                <div class="abtus">
-                    <p class="section_label">About us</p>
-                    <h2>Elegant food, warm service, unforgettable evenings.</h2>
-                </div>
-                <div class="abtus">
-                    <p>Aurelle brings refined dining to Lagos with seasonal plates, polished hospitality, and a room designed for celebration.</p>
-                </div>
+        <div class="abtchild">
+            <div class="abtus">
+                <h2>Our Story</h2>
+                <p>Aurelle was built around one idea: that a meal, made with care and shared slowly, is one of the finest things a day can hold. Every dish leaving our kitchen is a small act of craft — seasonal, considered, and plated with intent.</p>
+            </div>
+            <div class="abtimg">
+                <img src="assets/image/hero_platter.png" alt="Aurelle signature stew, plated for service">
             </div>
         </div>
     </section>
 
-    <footer class="site_footer">
+    <footer class="site_footer" id="contact">
         <div class="footer_inner">
 
             <div class="footer_brand">
@@ -167,7 +172,7 @@
                         <img src="assets/svg/phone.svg" alt="" class="footer_social_icon">
                     </a>
                     <a href="#" class="footer_social_link" aria-label="Email">
-                        <img src="assets/svg/email.svg" alt="" class="footer_social_icon">
+                        <img src="assets/svg/share.svg" alt="" class="footer_social_icon">
                     </a>
                 </div>
             </div>
@@ -175,9 +180,9 @@
             <div class="footer_col">
                 <p class="footer_col_title">Navigate</p>
                 <ul class="footer_links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#order">Order</a></li>
-                    <li><a href="#reservations">Reservations</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#about">About us</a></li>
                 </ul>

@@ -1,0 +1,150 @@
+/* Nav */
+
+.nav_top {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 20px clamp(20px, 5vw, 60px);
+  background: linear-gradient(
+    170deg,
+    var(--rich-mahogany-mid)  0%,
+    var(--rich-mahogany)      55%,
+    var(--rich-mahogany-deep) 100%
+  );
+  border-bottom: 1px solid rgba(213, 191, 134, 0.14);
+}
+
+.nav_top_brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.nav_top_brand svg {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+}
+
+.nav_top_brand span {
+  color: var(--soft-fawn);
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+.nav_top_links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 2.4vw, 32px);
+  list-style: none;
+  flex: 1;
+}
+
+.nav_top_links a {
+  color: var(--lemon-chiffon);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color var(--t-fast) var(--ease);
+}
+
+.nav_top_links a:hover,
+.nav_top_links li.active a {
+  color: var(--soft-fawn);
+}
+
+.nav_top_cta {
+  flex-shrink: 0;
+  display: inline-block;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 2px;
+  background-color: var(--ruby-red);
+  color: var(--lemon-chiffon);
+  font: inherit;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--t-base) var(--ease), color var(--t-base) var(--ease);
+}
+
+.nav_top_cta:hover {
+  color: var(--soft-fawn);
+  background-color: var(--rich-mahogany-mid);
+}
+
+/* T */
+@media (max-width: 900px) {
+  .nav_top {
+    padding: 16px 20px;
+  }
+
+  .nav_top_links {
+    gap: 14px;
+  }
+
+  .nav_top_links a {
+    font-size: 12px;
+  }
+}
+
+/* M */
+@media (max-width: 620px) {
+  .nav_top {
+    padding: 14px 16px;
+    gap: 8px;
+  }
+
+  .nav_top_brand span {
+    display: none;
+  }
+
+  .nav_top_brand svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav_top_links {
+    gap: 9px;
+  }
+
+  .nav_top_links a {
+    font-size: 9.5px;
+    letter-spacing: 0.3px;
+  }
+
+  .nav_top_cta {
+    padding: 7px 13px;
+    font-size: 10px;
+  }
+}
+
+/* S */
+@media (max-width: 380px) {
+  .nav_top_links {
+    gap: 6px;
+  }
+
+  .nav_top_links a {
+    font-size: 8.5px;
+  }
+
+  .nav_top_cta {
+    padding: 6px 10px;
+    font-size: 9px;
+  }
+}

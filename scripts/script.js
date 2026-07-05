@@ -1,4 +1,4 @@
-/*slider*/
+/* Slider */
 const slider_track = document.querySelector(".orderSlider");
 const slide_cards = slider_track.querySelectorAll(".food_card-slider");
 const template_card = slide_cards[0];
@@ -66,7 +66,7 @@ for (let i = 1; i < all_cards.length; i++) {
   add_slide_cards(all_cards[i]);
 }
 
-/*auto move*/
+/* Auto */
 let isDragging = false;
 let isHovering = false;
 let startX = 0;
@@ -165,7 +165,7 @@ slider_track.addEventListener("mousemove", (e) => {
 });
 
 
-/* static cards */
+/* Static */
 const menu_cont = document.querySelector(".menu_cont");
 let stat_cards = menu_cont.querySelectorAll(".food_card");
 const template_statCard = stat_cards[0];
@@ -219,7 +219,7 @@ for (let i = 1; i < all_statCards.length; i++) {
 stat_cards = document.querySelectorAll(".food_card");
 
 
-/*filter*/
+/* Filter */
 const All = document.getElementById("all_btn");
 const Appetizer = document.getElementById("appetizers_btn");
 const Mains = document.getElementById("mains_btn");
@@ -251,7 +251,7 @@ Dessert.addEventListener("click", () => applyFilter("DESSERT"));
 Drinks.addEventListener("click", () => applyFilter("DRINKS"));
 
 
-/* Add to cart */
+/* Cart */
 let in_cart = [];
 let cart_total = 0;
 
@@ -286,7 +286,7 @@ document.querySelectorAll(".add_cart_btn").forEach((btn) => {
 });
 
 
-/* Cart popup */
+/* Popup */
 const cart_btn = document.getElementById("cart_btn");
 const cart_popup = document.getElementById("cart_popup");
 const cart_items_list = document.getElementById("cart_items_list");
