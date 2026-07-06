@@ -285,13 +285,13 @@ document.querySelectorAll(".add_cart_btn").forEach((btn) => {
   });
 });
 
-
 /* Popup */
 const cart_btn = document.getElementById("cart_btn");
 const cart_popup = document.getElementById("cart_popup");
 const cart_items_list = document.getElementById("cart_items_list");
 const cart_total_el = document.getElementById("cart_total");
 const cart_count_el = document.getElementById("cart_count");
+
 
 function removeFrom_cart(name) {
   const index = in_cart.findIndex(item => item.name === name);

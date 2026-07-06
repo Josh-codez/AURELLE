@@ -1,0 +1,380 @@
+/* ── ORDER TRACKING PAGE ── */
+
+.tracking_page {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 9vw, 76px) clamp(16px, 5vw, 80px);
+  background:
+    linear-gradient(135deg, rgba(63, 13, 18, 0.94), rgba(167, 29, 49, 0.84)),
+    var(--rich-mahogany);
+  color: var(--lemon-chiffon);
+  overflow-x: hidden;
+}
+
+.tracking_header {
+  max-width: 760px;
+  margin-bottom: 34px;
+  animation: fadeInUp 0.7s var(--ease) both;
+}
+
+.back_link {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--soft-fawn);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color var(--t-fast) var(--ease);
+}
+
+.back_link:hover {
+  color: var(--lemon-chiffon);
+}
+
+.tracking_header .section_label {
+  color: var(--soft-fawn);
+}
+
+.tracking_header h1 {
+  margin: 8px 0 12px;
+  font-family: var(--font-display, Georgia, "Times New Roman", serif);
+  font-size: clamp(34px, 5vw, 64px);
+}
+
+.tracking_header p:not(.section_label) {
+  color: rgba(241, 240, 204, 0.76);
+  line-height: 1.6;
+}
+
+.tracking_layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 1.05fr) minmax(280px, 0.95fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.tracking_panel,
+.map_preview {
+  border: 1px solid rgba(213, 191, 134, 0.28);
+  border-radius: 8px;
+  background: rgba(241, 240, 204, 0.08);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+  animation: fadeInUp 0.7s var(--ease) both;
+}
+
+.tracking_panel {
+  padding: clamp(22px, 4vw, 34px);
+  animation-delay: 0.1s;
+}
+
+.map_preview {
+  animation-delay: 0.2s;
+}
+
+.tracking_form label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--soft-fawn);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.tracking_input_row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.tracking_input_row input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid rgba(213, 191, 134, 0.35);
+  border-radius: 4px;
+  background: rgba(255, 250, 240, 0.11);
+  color: var(--lemon-chiffon);
+  font: inherit;
+  padding: 0 14px;
+}
+
+.tracking_input_row input::placeholder {
+  color: rgba(241, 240, 204, 0.52);
+}
+
+.tracking_input_row button {
+  min-height: 48px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--soft-fawn);
+  color: var(--rich-mahogany);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background var(--t-base) var(--ease);
+}
+
+.tracking_input_row button:hover {
+  background: var(--lemon-chiffon);
+}
+
+.tracking_summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 24px 0 30px;
+}
+
+.tracking_summary div {
+  padding: 18px;
+  border: 1px solid rgba(213, 191, 134, 0.22);
+  border-radius: 8px;
+  background: rgba(63, 13, 18, 0.24);
+}
+
+.tracking_summary span {
+  display: block;
+  margin-bottom: 8px;
+  color: rgba(241, 240, 204, 0.64);
+  font-size: 13px;
+}
+
+.tracking_summary strong {
+  color: var(--soft-fawn);
+  font-size: clamp(20px, 3vw, 30px);
+}
+
+.status_bar {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.status_bar::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 9%;
+  right: 9%;
+  height: 3px;
+  background: rgba(213, 191, 134, 0.28);
+}
+
+.status_step {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  min-width: 0;
+  text-align: center;
+}
+
+.status_dot {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(213, 191, 134, 0.52);
+  border-radius: 50%;
+  background: var(--rich-mahogany);
+}
+
+.status_step.completed .status_dot,
+.status_step.active .status_dot {
+  border-color: var(--soft-fawn);
+  background: var(--ruby-red);
+}
+
+.status_step.active .status_dot {
+  animation: trackingPulse 1.8s var(--ease) infinite;
+}
+
+.status_step p {
+  color: rgba(241, 240, 204, 0.68);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.status_step.completed p,
+.status_step.active p {
+  color: var(--lemon-chiffon);
+  font-weight: 700;
+}
+
+.map_preview {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(241, 240, 204, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(241, 240, 204, 0.08) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(213, 191, 134, 0.24), rgba(63, 13, 18, 0.25));
+  background-size: 46px 46px, 46px 46px, 100% 100%;
+}
+
+.map_route {
+  position: absolute;
+  inset: clamp(48px, 12vw, 88px) clamp(36px, 9vw, 70px) clamp(52px, 12vw, 92px) clamp(40px, 10vw, 78px);
+  border-top: 7px dashed var(--soft-fawn);
+  border-right: 7px dashed var(--soft-fawn);
+  border-radius: 0 110px 0 0;
+  opacity: 0.9;
+}
+
+.map_pin {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 9px;
+  border-radius: 999px;
+  background: var(--ruby-red);
+  color: var(--lemon-chiffon);
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26);
+}
+
+.restaurant_pin {
+  left: clamp(20px, 6vw, 54px);
+  bottom: clamp(40px, 10vw, 72px);
+}
+
+.customer_pin {
+  right: clamp(18px, 5vw, 48px);
+  top: clamp(32px, 8vw, 60px);
+  background: var(--soft-fawn);
+  color: var(--rich-mahogany);
+}
+
+.map_card {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  padding: 16px;
+  border: 1px solid rgba(213, 191, 134, 0.25);
+  border-radius: 8px;
+  background: rgba(63, 13, 18, 0.72);
+}
+
+.map_card strong {
+  color: var(--soft-fawn);
+}
+
+.map_card p {
+  margin-top: 4px;
+  color: rgba(241, 240, 204, 0.7);
+  font-size: 13px;
+}
+
+@keyframes trackingPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(213, 191, 134, 0.38);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(213, 191, 134, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(213, 191, 134, 0);
+  }
+}
+
+/* ── TABLET ── */
+@media (max-width: 980px) {
+  .tracking_layout {
+    grid-template-columns: 1fr;
+  }
+
+  .map_preview {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 860px) {
+  .status_bar {
+    gap: 6px;
+  }
+
+  .status_dot {
+    width: 30px;
+    height: 30px;
+  }
+
+  .status_bar::before {
+    top: 14px;
+  }
+
+  .status_step p {
+    font-size: 11.5px;
+  }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 620px) {
+  /* clearance so content doesn't sit under the bottom tab nav on mobile —
+     adjust this value to match the actual height set in nav.css */
+  .tracking_page {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .tracking_input_row,
+  .tracking_summary,
+  .status_bar {
+    grid-template-columns: 1fr;
+  }
+
+  .status_bar::before {
+    display: none;
+  }
+
+  .status_step {
+    grid-template-columns: 36px 1fr;
+    justify-items: start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 400px) {
+  .tracking_panel {
+    padding: 18px;
+  }
+
+  .map_preview {
+    min-height: 220px;
+  }
+
+  .map_pin {
+    min-width: 36px;
+    height: 36px;
+    font-size: 11px;
+    padding: 0 7px;
+  }
+
+  .map_card {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    padding: 12px;
+  }
+
+  .tracking_summary strong {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tracking_header,
+  .tracking_panel,
+  .map_preview {
+    animation: none;
+  }
+
+  .status_step.active .status_dot {
+    animation: none;
+    box-shadow: 0 0 0 8px rgba(213, 191, 134, 0.16);
+  }
+}
