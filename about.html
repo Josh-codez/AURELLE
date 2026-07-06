@@ -1,12 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Aurulle Restaurant</title>
-    <link rel="stylesheet" href="css/about.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Aurelle Restaurant</title>
+
+<link rel="stylesheet" href="css/about.css">
+<link rel="stylesheet" href="css/nav.css">
+
 </head>
 <body>
+
+<button class="nav_toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+<div class="nav_overlay" id="navOverlay"></div>
+
+<nav class="nav_bar" id="navBar" aria-label="Main navigation">
+                <div class="image_cont">
+                    <svg width="100" height="100" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="200" cy="200" r="152" fill="none" stroke="#D5BF86" stroke-width="1.2"/>
+                        <circle cx="200" cy="200" r="138" fill="none" stroke="#D5BF86" stroke-width="2"/>
+                        <circle cx="200" cy="200" r="130" fill="none" stroke="#8D775F" stroke-width="0.6" opacity="0.6"/>
+                        <polygon points="200,57 204.5,64 200,71 195.5,64" fill="#D5BF86"/>
+                        <polygon points="200,329 204.5,336 200,343 195.5,336" fill="#D5BF86"/>
+                        <polygon points="57,200 64,204.5 71,200 64,195.5" fill="#D5BF86"/>
+                        <polygon points="329,200 336,204.5 343,200 336,195.5" fill="#D5BF86"/>
+                        <g transform="translate(200, 108)">
+                            <rect x="-22" y="14" width="44" height="5" rx="1" fill="#D5BF86" opacity="0.9"/>
+                            <polygon points="-22,14 -22,-2 -11,8 0,-4 11,8 22,-2 22,14" fill="#D5BF86" opacity="0.85"/>
+                            <circle cx="0" cy="-4" r="2.2" fill="#A71D31" stroke="#D5BF86" stroke-width="0.8"/>
+                            <circle cx="-11" cy="8" r="1.5" fill="#D5BF86"/>
+                            <circle cx="11"  cy="8" r="1.5" fill="#D5BF86"/>
+                            <circle cx="-22" cy="-2" r="1.5" fill="#D5BF86"/>
+                            <circle cx="22"  cy="-2" r="1.5" fill="#D5BF86"/>
+                        </g>
+                        <path d="M200 138 L253 275 L245 275 L230 238 L170 238 L156 275 L147 275 Z M176 228 L200 165 L224 228 Z" fill="#D5BF86" opacity="0.92"/>
+                        <rect x="134" y="275" width="26" height="2.5" rx="1" fill="#D5BF86" opacity="0.9"/>
+                        <rect x="240" y="275" width="26" height="2.5" rx="1" fill="#D5BF86" opacity="0.9"/>
+                        <rect x="158" y="229" width="84" height="2" rx="1" fill="#D5BF86" opacity="0.85"/>
+                        <polygon points="200,293 203.5,298 200,303 196.5,298" fill="#A71D31" stroke="#D5BF86" stroke-width="0.8"/>
+                        <text x="200" y="382" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="28" letter-spacing="10" fill="#D5BF86" font-weight="400">AURELLE</text>
+                        <text x="200" y="400" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" letter-spacing="5" fill="#8D775F" font-weight="400" font-style="italic">Fine Dining</text>
+                    </svg>
+                </div>
+            
+                <ul class="navli_cont">
+                    <div class="nav_divider"></div>
+                    <li>
+                        <a href="index.html">
+                            <img src="assets/svg/home.svg" alt="Home" class="nav_icon">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="order.html">
+                            <img src="assets/svg/cart.svg" alt="Order" class="nav_icon">
+                            Order
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reservations.html">
+                            <img src="assets/svg/reservation.svg" alt="Reservations" class="nav_icon">
+                            Reservations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html">
+                            <img src="assets/svg/location.svg" alt="Location" class="nav_icon">
+                            Location
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            <img src="assets/svg/about.svg" alt="About us" class="nav_icon">
+                            About us
+                        </a>
+                    </li>
+                    <div class="nav_divider"></div>
+                    <li>
+                        <a href="contact.html">
+                            <img src="assets/svg/contact.svg" alt="Contact" class="nav_icon">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="res_info">
+                    
+                </div>
+            </nav>
 
 <div class="main">
     <div class="hero">
@@ -15,14 +96,14 @@
     </div>
 
     <div class="story-section">
-        <img src="" alt="Restaurant Interior" class="story-image">
+        <img src="assets/image/interior.jpg" alt="Restaurant Interior" class="story-image">
         <div>
-            <h2>Aurelle</h2>
+            <h2 style="text-align:left">Aurelle</h2>
             <p>Aurelle began with a passion for blending modern cuisine with timeless hospitality.
                Our mission is simple: serve exceptional food in an unforgettable atmosphere.</p>
 
-            <div class="chef" style="margin-top: 40px;">
-                <img src="" alt="Chef Marco Rossi">
+            <div class="chef">
+                <img src="assets/image/chef.jpg" alt="Chef Marco Rossi">
                 <div>
                     <h3>Meet Chef Marco Rossi</h3>
                     <p>Award-winning culinary expert specializing in modern European and international cuisine.</p>
@@ -48,6 +129,7 @@
             </div>
         </div>
     </div>
+
     <div class="stats">
         <div class="stat">
             <i class="fa-solid fa-heart"></i>
@@ -67,15 +149,37 @@
     </div>
 
     <h2>Restaurant Gallery</h2>
-    <div class="gallery">
-        <img src="" alt="Gallery">
-        <img src="" alt="Gallery">
-        <img src="" alt="Gallery">
-        <img src="" alt="Gallery">
-        <img src="" alt="Gallery">
-        <img src="" alt="Gallery">
+    <div class="gallery" id="gallery">
+        <img src="assets/image/gallery (1).jpg" alt="Gallery">
+        <img src="assets/image/gallery (2).jpg" alt="Gallery">
+        <img src="assets/image/gallery (3).jpg" alt="Gallery">
+        <img src="assets/image/gallery (4).jpg" alt="Gallery">
+        <img src="assets/image/gallery (5).jpg" alt="Gallery">
+        <img src="assets/image/gallery (6).jpg" alt="Gallery">
+        <img src="assets/image/gallery (7).jpg" alt="Gallery">
+
     </div>
 </div>
 
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navBar = document.getElementById('navBar');
+  const navOverlay = document.getElementById('navOverlay');
+  function closeNav(){
+    navBar.classList.remove('open');
+    navOverlay.classList.remove('open');
+    navToggle.setAttribute('aria-expanded','false');
+  }
+  navToggle.addEventListener('click', () => {
+    const isOpen = navBar.classList.toggle('open');
+    navOverlay.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  navOverlay.addEventListener('click', closeNav);
+  navBar.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    if (window.innerWidth <= 768) closeNav();
+  }));
+</script>
+<script src="scripts/nav_active.js"></script>
 </body>
 </html>

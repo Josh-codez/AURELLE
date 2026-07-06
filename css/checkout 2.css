@@ -1,20 +1,48 @@
-/* ── ORDER TRACKING PAGE ── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --rich-mahogany:      #3f0d12;
+  --rich-mahogany-mid:  #521520;
+  --rich-mahogany-deep: #2a080c;
+  --ruby-red:           #a71d31;
+  --ruby-deep:          #7a0f22;
+  --lemon-chiffon:      #f1f0cc;
+  --soft-fawn:          #d5bf86;
+  --faded-copper:       #8d775f;
+
+  --nav-width: 200px;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', -apple-system, sans-serif;
+
+  --ease:   cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast: 0.18s;
+  --t-base: 0.26s;
+}
+html {
+  scroll-behavior: smooth;
+}
+
 
 .tracking_page {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 9vw, 76px) clamp(16px, 5vw, 80px);
+  padding: 76px clamp(16px, 5vw, 80px);
   background:
     linear-gradient(135deg, rgba(63, 13, 18, 0.94), rgba(167, 29, 49, 0.84)),
     var(--rich-mahogany);
   color: var(--lemon-chiffon);
-  overflow-x: hidden;
 }
 
 .tracking_header {
   max-width: 760px;
   margin-bottom: 34px;
-  animation: fadeInUp 0.7s var(--ease) both;
 }
 
 .back_link {
@@ -25,7 +53,6 @@
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
-  transition: color var(--t-fast) var(--ease);
 }
 
 .back_link:hover {
@@ -38,7 +65,7 @@
 
 .tracking_header h1 {
   margin: 8px 0 12px;
-  font-family: var(--font-display, Georgia, "Times New Roman", serif);
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(34px, 5vw, 64px);
 }
 
@@ -60,16 +87,10 @@
   border-radius: 8px;
   background: rgba(241, 240, 204, 0.08);
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
-  animation: fadeInUp 0.7s var(--ease) both;
 }
 
 .tracking_panel {
   padding: clamp(22px, 4vw, 34px);
-  animation-delay: 0.1s;
-}
-
-.map_preview {
-  animation-delay: 0.2s;
 }
 
 .tracking_form label {
@@ -102,6 +123,13 @@
   color: rgba(241, 240, 204, 0.52);
 }
 
+.tracking_input_row input[readonly] {
+  cursor: default;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: rgba(255, 250, 240, 0.06);
+}
+
 .tracking_input_row button {
   min-height: 48px;
   padding: 0 20px;
@@ -112,11 +140,94 @@
   font: inherit;
   font-weight: 800;
   cursor: pointer;
-  transition: background var(--t-base) var(--ease);
 }
 
 .tracking_input_row button:hover {
   background: var(--lemon-chiffon);
+}
+
+.order_summary {
+  margin-bottom: 24px;
+}
+
+.order_summary_title {
+  margin: 0 0 12px;
+  color: var(--soft-fawn);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.order_items {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  border: 1px solid rgba(213, 191, 134, 0.22);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.order_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 13px 16px;
+  background: rgba(63, 13, 18, 0.24);
+}
+
+.order_item + .order_item {
+  border-top: 1px solid rgba(213, 191, 134, 0.16);
+}
+
+.order_item_name {
+  color: var(--lemon-chiffon);
+  font-size: 14px;
+}
+
+.order_item_qty {
+  margin-left: 6px;
+  color: rgba(241, 240, 204, 0.5);
+  font-size: 12px;
+}
+
+.order_item_price {
+  color: var(--soft-fawn);
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.order_total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border: 1px solid rgba(213, 191, 134, 0.32);
+  border-radius: 8px;
+  background: rgba(213, 191, 134, 0.1);
+}
+
+.order_total span {
+  color: rgba(241, 240, 204, 0.76);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.order_total strong {
+  color: var(--soft-fawn);
+  font-size: clamp(18px, 2.4vw, 24px);
+}
+
+@media (max-width: 380px) {
+  .order_item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
 }
 
 .tracking_summary {
@@ -188,7 +299,7 @@
 }
 
 .status_step.active .status_dot {
-  animation: trackingPulse 1.8s var(--ease) infinite;
+  box-shadow: 0 0 0 8px rgba(213, 191, 134, 0.16);
 }
 
 .status_step p {
@@ -216,7 +327,7 @@
 
 .map_route {
   position: absolute;
-  inset: clamp(48px, 12vw, 88px) clamp(36px, 9vw, 70px) clamp(52px, 12vw, 92px) clamp(40px, 10vw, 78px);
+  inset: 88px 70px 92px 78px;
   border-top: 7px dashed var(--soft-fawn);
   border-right: 7px dashed var(--soft-fawn);
   border-radius: 0 110px 0 0;
@@ -239,13 +350,13 @@
 }
 
 .restaurant_pin {
-  left: clamp(20px, 6vw, 54px);
-  bottom: clamp(40px, 10vw, 72px);
+  left: 54px;
+  bottom: 72px;
 }
 
 .customer_pin {
-  right: clamp(18px, 5vw, 48px);
-  top: clamp(32px, 8vw, 60px);
+  right: 48px;
+  top: 60px;
   background: var(--soft-fawn);
   color: var(--rich-mahogany);
 }
@@ -271,54 +382,60 @@
   font-size: 13px;
 }
 
-@keyframes trackingPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(213, 191, 134, 0.38);
-  }
-  70% {
-    box-shadow: 0 0 0 12px rgba(213, 191, 134, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(213, 191, 134, 0);
-  }
+.abtsec {
+  padding: 70px clamp(16px, 5vw, 80px);
+  background: #fffaf0;
 }
 
-/* ── TABLET ── */
+.abtchild {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.abtus {
+  padding: 28px;
+  border-left: 4px solid var(--ruby-red);
+}
+
+.abtus h2 {
+  color: var(--rich-mahogany);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 4vw, 52px);
+  line-height: 1;
+}
+
+.abtus p {
+  color: var(--faded-copper);
+  line-height: 1.7;
+}
+
 @media (max-width: 980px) {
-  .tracking_layout {
+  .menu_cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .abtchild {
     grid-template-columns: 1fr;
   }
 
-  .map_preview {
-    min-height: 280px;
+  .tracking_layout {
+    grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 860px) {
-  .status_bar {
-    gap: 6px;
-  }
-
-  .status_dot {
-    width: 30px;
-    height: 30px;
-  }
-
-  .status_bar::before {
-    top: 14px;
-  }
-
-  .status_step p {
-    font-size: 11.5px;
-  }
-}
-
-/* ── MOBILE ── */
 @media (max-width: 620px) {
-  /* clearance so content doesn't sit under the bottom tab nav on mobile —
-     adjust this value to match the actual height set in nav.css */
-  .tracking_page {
-    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  .heroimage {
+    min-height: 72vh;
+  }
+
+  .herotext button {
+    width: min(100%, 230px);
+  }
+
+  .menu_cards {
+    grid-template-columns: 1fr;
   }
 
   .tracking_input_row,
@@ -335,46 +452,5 @@
     grid-template-columns: 36px 1fr;
     justify-items: start;
     text-align: left;
-  }
-}
-
-@media (max-width: 400px) {
-  .tracking_panel {
-    padding: 18px;
-  }
-
-  .map_preview {
-    min-height: 220px;
-  }
-
-  .map_pin {
-    min-width: 36px;
-    height: 36px;
-    font-size: 11px;
-    padding: 0 7px;
-  }
-
-  .map_card {
-    left: 14px;
-    right: 14px;
-    bottom: 14px;
-    padding: 12px;
-  }
-
-  .tracking_summary strong {
-    font-size: 20px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .tracking_header,
-  .tracking_panel,
-  .map_preview {
-    animation: none;
-  }
-
-  .status_step.active .status_dot {
-    animation: none;
-    box-shadow: 0 0 0 8px rgba(213, 191, 134, 0.16);
   }
 }

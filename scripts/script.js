@@ -16,10 +16,10 @@ class Slider_cards {
 
 const card1 = new Slider_cards("STARTER", "assets/image/combo (1).jpg", "BreakFast Pack", "8,500", 4.8);
 const card2 = new Slider_cards("STARTER", "assets/image/combo (3).jpg", "Lobster bisque", "9,500", 4.9);
-const card3 = new Slider_cards("MAIN", "assets/image/combo (2).jpg", "Duck à l'orange", "58", 4.9);
-const card4 = new Slider_cards("MAIN", "assets/img/filet.jpg", "Filet mignon", "86", 5.0);
-const card5 = new Slider_cards("DESSERT", "assets/img/brulee.jpg", "Crème brûlée", "18", 4.8);
-const card6 = new Slider_cards("DESSERT", "assets/img/souffle.jpg", "Soufflé au chocolat", "22", 4.9);
+const card3 = new Slider_cards("MAIN", "assets/image/combo (2).jpg", "Duck à l'orange", "5,800", 4.9);
+const card4 = new Slider_cards("MAIN", "assets/image/combo (4).jpg", "Filet mignon", "8,600", 5.0);
+const card5 = new Slider_cards("DESSERT", "assets/image/combo (5).jpg", "Crème brûlée", "1,800", 4.8);
+const card6 = new Slider_cards("DESSERT", "assets/image/combo (6).jpg", "Soufflé au chocolat", "2,200", 4.9);
 
 const all_cards = [card1, card2, card3, card4, card5, card6];
 
